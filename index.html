@@ -8,7 +8,7 @@
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:transparent;font-family:Arial,'Noto Sans KR',sans-serif;color:#111827;overflow:hidden;}
 .nowda-wrap{width:100%;max-width:1040px;margin:0 auto;background:transparent;}
-.view-tabs{display:none;gap:6px;justify-content:center;align-items:center;padding:6px 4px 7px;background:#ffffff;}
+.view-tabs{display:flex;gap:6px;justify-content:center;align-items:center;padding:6px 4px 7px;background:#ffffff;flex-wrap:wrap;}
 .view-tabs button{border:1.5px solid #e5e7eb;background:#f9fafb;color:#6b7280;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;line-height:1;cursor:pointer;transition:all .15s;}
 .view-tabs button.active{background:#dd6b20;color:#fff;border-color:#dd6b20;}
 .view-tabs button[data-view="east"].active{background:#0a7c50;border-color:#0a7c50;}
@@ -148,7 +148,8 @@ function setView(name){
 function selectSpot(id){
   selected=findSpot(id);
   if(window.innerWidth<=700){
-    renderSelected(); // 선택링만
+    popupLayer.innerHTML='';
+    selectedLayer.innerHTML='<circle class="focus-ring" cx="'+selected.x+'" cy="'+selected.y+'" r="25"></circle><circle class="focus-ring2" cx="'+selected.x+'" cy="'+selected.y+'" r="28"></circle>';
     openSheet(selected);
   } else {
     renderSelected();
@@ -216,10 +217,15 @@ if(sheetCloseBtn){
     selected=null; selectedLayer.innerHTML=''; popupLayer.innerHTML='';
   });
 }
-// 폰: 처음 열면 1번 성산일출봉 자동 오픈
+// 폰에서만 1번 자동 오픈
 if(window.innerWidth<=700){
   var first=spots.find(function(s){return s.num===1;});
-  if(first){selected=findSpot(first.id);renderSelected();openSheet(selected);}
+  if(first){
+    selected=findSpot(first.id);
+    selectedLayer.innerHTML='';
+    popupLayer.innerHTML='';
+    openSheet(selected);
+  }
 }
 svg.addEventListener('click',e=>{
   const hit=e.target.closest && e.target.closest('.marker-g');
