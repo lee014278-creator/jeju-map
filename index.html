@@ -86,7 +86,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#f5f5f5;color:#111;display
 </div>
 
 <script>
-const spots = [{"id": "free-1", "num": 1, "name": "성산일출봉", "type": "무료", "region": "동부", "x": 1220, "y": 310, "home": "https://www.jeju.go.kr/jejuwnh/heritage/seongsan/intro.htm"}, {"id": "free-2", "num": 2, "name": "만장굴", "type": "무료", "region": "동부", "x": 1020, "y": 155, "home": "https://www.jeju.go.kr/jejuwnh/heritage/lavatube/manjanggul.htm"}, {"id": "free-3", "num": 3, "name": "비자림", "type": "무료", "region": "동부", "x": 1005, "y": 205, "home": "https://tour.jejudsi.kr/tour.htm?act=view&id=map11"}, {"id": "free-4", "num": 4, "name": "거문오름", "type": "무료", "region": "동부", "x": 870, "y": 265, "home": "https://www.jeju.go.kr/wnhcenter/black/black.htm"}, {"id": "free-5", "num": 5, "name": "세계자연유산센터", "type": "무료", "region": "동부", "x": 1080, "y": 300, "home": "https://www.jeju.go.kr/wnhcenter/index.htm"}, {"id": "free-6", "num": 6, "name": "노루생태관찰원", "type": "무료", "region": "동부", "x": 1130, "y": 430}, {"id": "free-7", "num": 7, "name": "교래자연휴양림", "type": "무료", "region": "동부", "x": 820, "y": 415, "home": "https://gyorae.foresttrip.go.kr/"}, {"id": "free-8", "num": 8, "name": "붉은오름자연휴양림", "type": "무료", "region": "남부", "x": 1050, "y": 520, "home": "https://eticket.seogwipo.go.kr/contents?bmcode=red"}, {"id": "free-9", "num": 9, "name": "천지연폭포", "type": "무료", "region": "남부", "x": 690, "y": 645, "home": "https://eticket.seogwipo.go.kr/contents?bmcode=cheonjiyeon"}, {"id": "free-10", "num": 10, "name": "천제연폭포", "type": "무료", "region": "남부", "x": 430, "y": 760, "home": "https://eticket.seogwipo.go.kr/contents?bmcode=cheonjeyeon"}, {"id": "free-11", "num": 11, "name": "정방폭포", "type": "무료", "region": "남부", "x": 1060, "y": 795, "home": "https://eticket.seogwipo.go.kr/contents?bmcode=jeongbang"}, {"id": "free-12", "num": 12, "name": "주상절리대", "type": "무료", "region": "남부", "x": 600, "y": 840, "home": "https://eticket.seogwipo.go.kr/contents?bmcode=joosang"}, {"id": "free-13", "num": 13, "name": "산방산", "type": "무료", "region": "서부", "x": 215, "y": 670, "home": "https://eticket.seogwipo.go.kr/contents?bmcode=sanbangsan"}, {"id": "free-14", "num": 14, "name": "용머리해안", "type": "무료", "region": "서부", "x": 170, "y": 730, "home": "https://eticket.seogwipo.go.kr/contents?bmcode=dragon"}, {"id": "free-15", "num": 15, "name": "서귀포치유의숲", "type": "무료", "region": "남부", "x": 510, "y": 600, "home": "https://eticket.seogwipo.go.kr/contents?bmcode=heel"}, {"id": "free-16", "num": 16, "name": "제주목관아", "type": "무료", "region": "제주시", "x": 580, "y": 215, "home": "https://www.jeju.go.kr/mokkwana/index.htm"}, {"id": "discount-17", "num": 17, "name": "돌문화공원", "type": "할인", "region": "동부", "x": 940, "y": 370, "home": "https://www.jeju.go.kr/jejustonepark/"}, {"id": "discount-18", "num": 18, "name": "제주도립미술관", "type": "할인", "region": "제주시", "x": 730, "y": 210, "home": "https://www.jeju.go.kr/jmoa/"}, {"id": "discount-19", "num": 19, "name": "이중섭미술관", "type": "할인", "region": "남부", "x": 820, "y": 715, "home": "https://ssam.seogwipo.go.kr/about/museum/1"}, {"id": "discount-20", "num": 20, "name": "기당미술관", "type": "할인", "region": "남부", "x": 920, "y": 755, "home": "https://ssam.seogwipo.go.kr/about/museum/2"}, {"id": "discount-21", "num": 21, "name": "제주현대미술관", "type": "할인", "region": "서부", "x": 360, "y": 305, "home": "https://www.jeju.go.kr/jejumuseum/index.htm"}, {"id": "discount-22", "num": 22, "name": "김창열미술관", "type": "할인", "region": "서부", "x": 390, "y": 265, "home": "https://kimtschang-yeul.jeju.go.kr/"}, {"id": "discount-23", "num": 23, "name": "제주별빛누리공원", "type": "할인", "region": "제주시", "x": 540, "y": 170, "home": "https://www.jejusi.go.kr/star/main.do"}, {"id": "discount-24", "num": 24, "name": "제주감귤박물관", "type": "할인", "region": "남부", "x": 650, "y": 700, "home": "https://culture.seogwipo.go.kr/citrus"}, {"id": "discount-25", "num": 25, "name": "제주해녀박물관", "type": "할인", "region": "동부", "x": 1140, "y": 158, "home": "https://www.jeju.go.kr/haenyeo/index.htm"}, {"id": "discount-26", "num": 26, "name": "민속자연사박물관", "type": "할인", "region": "제주시", "x": 720, "y": 150, "home": "https://www.jeju.go.kr/museum/index.htm"}, {"id": "discount-27", "num": 27, "name": "서귀포천문과학문화관", "type": "할인", "region": "남부", "x": 470, "y": 660, "home": "https://eticket.seogwipo.go.kr/contents?bmcode=sky"}];
+const spots = [{"id": "free-1", "num": 1, "name": "성산일출봉", "type": "무료", "region": "동부", "x": 1220, "y": 310, "home": "https://www.jeju.go.kr/jejuwnh/heritage/seongsan/intro.htm"}, {"id": "free-2", "num": 2, "name": "만장굴", "type": "무료", "region": "동부", "x": 1100, "y": 110, "home": "https://www.jeju.go.kr/jejuwnh/heritage/lavatube/manjanggul.htm"}, {"id": "free-3", "num": 3, "name": "비자림", "type": "무료", "region": "동부", "x": 960, "y": 220, "home": "https://tour.jejudsi.kr/tour.htm?act=view&id=map11"}, {"id": "free-4", "num": 4, "name": "거문오름", "type": "무료", "region": "동부", "x": 870, "y": 265, "home": "https://www.jeju.go.kr/wnhcenter/black/black.htm"}, {"id": "free-5", "num": 5, "name": "세계자연유산센터", "type": "무료", "region": "동부", "x": 1080, "y": 300, "home": "https://www.jeju.go.kr/wnhcenter/index.htm"}, {"id": "free-6", "num": 6, "name": "노루생태관찰원", "type": "무료", "region": "동부", "x": 1130, "y": 430}, {"id": "free-7", "num": 7, "name": "교래자연휴양림", "type": "무료", "region": "동부", "x": 820, "y": 415, "home": "https://gyorae.foresttrip.go.kr/"}, {"id": "free-8", "num": 8, "name": "붉은오름자연휴양림", "type": "무료", "region": "남부", "x": 1050, "y": 520, "home": "https://eticket.seogwipo.go.kr/contents?bmcode=red"}, {"id": "free-9", "num": 9, "name": "천지연폭포", "type": "무료", "region": "남부", "x": 720, "y": 630, "home": "https://eticket.seogwipo.go.kr/contents?bmcode=cheonjiyeon"}, {"id": "free-10", "num": 10, "name": "천제연폭포", "type": "무료", "region": "남부", "x": 340, "y": 810, "home": "https://eticket.seogwipo.go.kr/contents?bmcode=cheonjeyeon"}, {"id": "free-11", "num": 11, "name": "정방폭포", "type": "무료", "region": "남부", "x": 1060, "y": 795, "home": "https://eticket.seogwipo.go.kr/contents?bmcode=jeongbang"}, {"id": "free-12", "num": 12, "name": "주상절리대", "type": "무료", "region": "남부", "x": 600, "y": 840, "home": "https://eticket.seogwipo.go.kr/contents?bmcode=joosang"}, {"id": "free-13", "num": 13, "name": "산방산", "type": "무료", "region": "서부", "x": 240, "y": 655, "home": "https://eticket.seogwipo.go.kr/contents?bmcode=sanbangsan"}, {"id": "free-14", "num": 14, "name": "용머리해안", "type": "무료", "region": "서부", "x": 155, "y": 750, "home": "https://eticket.seogwipo.go.kr/contents?bmcode=dragon"}, {"id": "free-15", "num": 15, "name": "서귀포치유의숲", "type": "무료", "region": "남부", "x": 540, "y": 585, "home": "https://eticket.seogwipo.go.kr/contents?bmcode=heel"}, {"id": "free-16", "num": 16, "name": "제주목관아", "type": "무료", "region": "제주시", "x": 610, "y": 200, "home": "https://www.jeju.go.kr/mokkwana/index.htm"}, {"id": "discount-17", "num": 17, "name": "돌문화공원", "type": "할인", "region": "동부", "x": 940, "y": 370, "home": "https://www.jeju.go.kr/jejustonepark/"}, {"id": "discount-18", "num": 18, "name": "제주도립미술관", "type": "할인", "region": "제주시", "x": 790, "y": 195, "home": "https://www.jeju.go.kr/jmoa/"}, {"id": "discount-19", "num": 19, "name": "이중섭미술관", "type": "할인", "region": "남부", "x": 820, "y": 715, "home": "https://ssam.seogwipo.go.kr/about/museum/1"}, {"id": "discount-20", "num": 20, "name": "기당미술관", "type": "할인", "region": "남부", "x": 920, "y": 755, "home": "https://ssam.seogwipo.go.kr/about/museum/2"}, {"id": "discount-21", "num": 21, "name": "제주현대미술관", "type": "할인", "region": "서부", "x": 330, "y": 315, "home": "https://www.jeju.go.kr/jejumuseum/index.htm"}, {"id": "discount-22", "num": 22, "name": "김창열미술관", "type": "할인", "region": "서부", "x": 420, "y": 255, "home": "https://kimtschang-yeul.jeju.go.kr/"}, {"id": "discount-23", "num": 23, "name": "제주별빛누리공원", "type": "할인", "region": "제주시", "x": 510, "y": 155, "home": "https://www.jejusi.go.kr/star/main.do"}, {"id": "discount-24", "num": 24, "name": "제주감귤박물관", "type": "할인", "region": "남부", "x": 620, "y": 715, "home": "https://culture.seogwipo.go.kr/citrus"}, {"id": "discount-25", "num": 25, "name": "제주해녀박물관", "type": "할인", "region": "동부", "x": 1180, "y": 170, "home": "https://www.jeju.go.kr/haenyeo/index.htm"}, {"id": "discount-26", "num": 26, "name": "민속자연사박물관", "type": "할인", "region": "제주시", "x": 690, "y": 135, "home": "https://www.jeju.go.kr/museum/index.htm"}, {"id": "discount-27", "num": 27, "name": "서귀포천문과학문화관", "type": "할인", "region": "남부", "x": 410, "y": 740, "home": "https://eticket.seogwipo.go.kr/contents?bmcode=sky"}];
 const regionClass = {동부:'east',남부:'south',서부:'west',제주시:'city'};
 const regions = {
   전체:{x:0,y:0,w:1517,h:1037},
@@ -166,7 +166,15 @@ function renderMarkers(){
 }
 
 function renderCards(){
-  const filtered=spots.filter(isVisible);
+  let filtered=spots.filter(isVisible);
+  // 열린 카드를 맨 앞으로
+  if(openId){
+    const idx=filtered.findIndex(s=>String(s.id)===String(openId));
+    if(idx>0){
+      const [item]=filtered.splice(idx,1);
+      filtered.unshift(item);
+    }
+  }
   document.getElementById('resultCount').innerHTML=`총 <strong style="color:#6b46c1">${filtered.length}곳</strong>`;
   const list=document.getElementById('cardList');
   list.innerHTML=filtered.map(s=>{
@@ -196,22 +204,14 @@ function renderCards(){
   list.querySelectorAll('.card').forEach(card=>{
     card.querySelector('.card-header').addEventListener('click',()=>{
       const id=card.dataset.id;
-      openId=String(openId)===String(id)?null:String(id);
+      openId=String(openId)===String(id)?null:id;
       renderCards();
     });
   });
-  // 열린 카드를 scroll-area 안에서만 스크롤
+  // 열린 카드가 맨 앞으로 정렬됐으므로 맨 위로 스크롤
   if(openId){
-    setTimeout(()=>{
-      const openCard=list.querySelector('.card.open');
-      const scrollArea=document.querySelector('.scroll-area');
-      if(openCard && scrollArea){
-        const areaRect=scrollArea.getBoundingClientRect();
-        const cardRect=openCard.getBoundingClientRect();
-        const offset=cardRect.top - areaRect.top + scrollArea.scrollTop - 8;
-        scrollArea.scrollTo({top:offset, behavior:'smooth'});
-      }
-    }, 50);
+    const scrollArea=document.querySelector('.scroll-area');
+    if(scrollArea) scrollArea.scrollTop=0;
   }
 }
 
