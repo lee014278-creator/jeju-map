@@ -172,7 +172,7 @@ function renderCards(){
   list.innerHTML=filtered.map(s=>{
     const c=colorOf(s);
     const rc=regionClass[s.region]||'';
-    const isOpen=openId===s.id;
+    const isOpen=String(openId)===String(s.id);
     const homeBtn=s.home?`<a href="${s.home}" target="_blank" class="card-btn home">🌐 홈페이지<\/a>`:'';
     return `<div class="card${isOpen?' open':''}" data-id="${s.id}">
       <div class="card-header">
@@ -196,7 +196,7 @@ function renderCards(){
   list.querySelectorAll('.card').forEach(card=>{
     card.querySelector('.card-header').addEventListener('click',()=>{
       const id=card.dataset.id;
-      openId=openId===id?null:id;
+      openId=String(openId)===String(id)?null:id;
       renderCards();
     });
   });
