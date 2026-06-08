@@ -196,20 +196,22 @@ function renderCards(){
   list.querySelectorAll('.card').forEach(card=>{
     card.querySelector('.card-header').addEventListener('click',()=>{
       const id=card.dataset.id;
-      openId=String(openId)===String(id)?null:id;
+      openId=String(openId)===String(id)?null:String(id);
       renderCards();
     });
   });
   // 열린 카드를 scroll-area 안에서만 스크롤
   if(openId){
-    const openCard=list.querySelector('.card.open');
-    const scrollArea=document.querySelector('.scroll-area');
-    if(openCard && scrollArea){
-      const areaRect=scrollArea.getBoundingClientRect();
-      const cardRect=openCard.getBoundingClientRect();
-      const offset=cardRect.top - areaRect.top + scrollArea.scrollTop - 8;
-      scrollArea.scrollTo({top:offset, behavior:'smooth'});
-    }
+    setTimeout(()=>{
+      const openCard=list.querySelector('.card.open');
+      const scrollArea=document.querySelector('.scroll-area');
+      if(openCard && scrollArea){
+        const areaRect=scrollArea.getBoundingClientRect();
+        const cardRect=openCard.getBoundingClientRect();
+        const offset=cardRect.top - areaRect.top + scrollArea.scrollTop - 8;
+        scrollArea.scrollTo({top:offset, behavior:'smooth'});
+      }
+    }, 50);
   }
 }
 
