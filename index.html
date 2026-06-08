@@ -200,11 +200,15 @@ function renderCards(){
       renderCards();
     });
   });
-  // 열린 카드를 맨 위로 스크롤
+  // 열린 카드를 scroll-area 안에서만 스크롤
   if(openId){
     const openCard=list.querySelector('.card.open');
-    if(openCard){
-      openCard.scrollIntoView({behavior:'smooth',block:'start'});
+    const scrollArea=document.querySelector('.scroll-area');
+    if(openCard && scrollArea){
+      const areaRect=scrollArea.getBoundingClientRect();
+      const cardRect=openCard.getBoundingClientRect();
+      const offset=cardRect.top - areaRect.top + scrollArea.scrollTop - 8;
+      scrollArea.scrollTo({top:offset, behavior:'smooth'});
     }
   }
 }
